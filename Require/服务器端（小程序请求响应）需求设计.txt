@@ -1,0 +1,33 @@
+服务器端（小程序请求响应）需求设计
+	(1)设计实体(抽象实体)
+		学生实体：
+		class Student{
+			private String ID;
+			private String Name;
+		}
+	(2)设计数据库
+		XML?
+		还是sqlite？
+	(3)设计涉及的接口
+		DAO接口(数据访问对象)
+		项目原则：通常一个实体对象就会对应一个
+		interface() Student{
+			public void addStudent();		//添加学生对象
+			public void updateStudent();	//更新学生对象
+			public void deleteStudent();	//删除学生对象
+			public List<Student> findAll(); //查询所有学生对象
+			public Student findById();		//根据学号查询学生对象
+		}
+	(4)设计项目目录结构
+		项目名称：
+		|-Welntu_web
+			|-src
+				|-com.cell1006.studentSys_web.entity:存放实体对象
+				|-com.cell1006.studentSys_web.dao:存放dao的接口
+				|-com.cell1006.studentSys_web.dao.impl:存放dao的实现类
+				|-com.cell1006.studentSys_web.servlet:存放servlet的类
+				|-com.cell1006.studentSys_web.test:存放单元测试类
+				|-com.cell1006.studentSys_web.util:存放工具
+				|-com.cell1006.studentSys_web.exception:存放自定义异常
+			|-WebRoot
+				|-js：
